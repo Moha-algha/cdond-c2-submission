@@ -335,7 +335,7 @@ workflows:
       - scan-backend
       - deploy-infrastructure
       - run-migrations
-      
+      - deploy-backend
       - deploy-frontend:
-        require: 
+        requires: 
           - deploy-backend
