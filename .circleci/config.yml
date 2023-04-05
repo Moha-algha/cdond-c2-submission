@@ -179,7 +179,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - add_ssh_key:
+      - add_ssh_keys:
           fingerprint: ["6a:57:43:68:5e:3c:d3:a4:61:9f:69:cb:f2:a5:44:43"]
       - attach_workspace: 
           at: /.circleci
@@ -286,7 +286,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - add_ssh_key:
+      - add_ssh_keys:
           fingerprint: ["6a:57:43:68:5e:3c:d3:a4:61:9f:69:cb:f2:a5:44:43"]
       - attach_workspace: 
           at: /.circleci
