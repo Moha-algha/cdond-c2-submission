@@ -184,7 +184,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ~/.circleci/
+            - Home/.circleci/
       - run:
           name: Install Ansible
           command: |
