@@ -182,7 +182,7 @@ jobs:
       - add_ssh_keys:
           fingerprint: ["6a:57:43:68:5e:3c:d3:a4:61:9f:69:cb:f2:a5:44:43"]
       - persist_to_workspace:
-          root: /
+          root: ~/
           paths:
             - .circleci/
       - run:
