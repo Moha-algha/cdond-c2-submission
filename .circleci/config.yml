@@ -338,4 +338,4 @@ workflows:
       
       - deploy-frontend:
         require: 
-          - d
+          - deploy-backend
