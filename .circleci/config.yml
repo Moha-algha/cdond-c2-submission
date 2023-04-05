@@ -174,4 +174,4 @@ workflows:
       - test-backend
       - scan-frontend
       - scan-backend
-      - infrastructure
+      - deploy-infrastructure
