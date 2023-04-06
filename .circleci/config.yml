@@ -338,6 +338,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: update packages
+          command: sudo apt update
+      - run:
           name: Install curl
           command: sudo apt install curl
       - run:
