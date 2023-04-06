@@ -171,7 +171,7 @@ jobs:
             echo "$(aws ec2 describe-instances \
               --query 'Reservations[*].Instances[*].PublicIpAddress')"
             cat .circleci/ansible/inventory.txt
-            cd project
+            cd CODEOWNERS
             echo "dir is $(ls)"
       - persist_to_workspace:
           root: /
