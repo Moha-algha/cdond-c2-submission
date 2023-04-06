@@ -175,7 +175,7 @@ jobs:
       - persist_to_workspace:
           root: /
           paths:
-            - .circleci/
+            - .circleci/ansible/
       # Here's where you will add some code to rollback on failure 
       
   configure-infrastructure:
