@@ -173,12 +173,12 @@ jobs:
             cat .circleci/ansible/inventory.txt
             cd 
             echo "contents $(ls)"
-            cd home
+            cd project
             echo "contens $(ls)"
       - persist_to_workspace:
           root: ~/
           paths:
-            - .circleci/ansible/inventory.txt
+            - project/.circleci/ansible/inventory.txt
       # Here's where you will add some code to rollback on failure 
       
   configure-infrastructure:
