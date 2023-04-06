@@ -346,6 +346,12 @@ jobs:
             curl -sL https://deb.nodesource.com/setup_16.x | sudo bash 
             sudo apt-get install -y nodejs
             sudo apt-get install -y npm
+      - run: 
+          name: Install Python
+          command: sudo apt install python3
+      - run: 
+          name: Install PIP
+          command: sudo apt-get install python-pip python-dev
       - run:
           name: Install awscli
           command: sudo pip install awscli
