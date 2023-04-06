@@ -339,7 +339,9 @@ jobs:
       - checkout
       - run:
           name: update packages
-          command: sudo apt update
+          command: |
+            sudo apt-get update
+            sudo apt-get upgrade
       - run:
           name: Install curl
           command: sudo apt install curl
@@ -348,7 +350,7 @@ jobs:
           command: sudo apt install nodejs
       - run:
           name: install npm
-          command: sudo apt install npm
+          command: sudo apt-get install npm
       - run:
           name: Install awscli
           command: sudo pip install awscli
