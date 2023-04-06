@@ -171,11 +171,10 @@ jobs:
             echo "$(aws ec2 describe-instances \
               --query 'Reservations[*].Instances[*].PublicIpAddress')"
             cat .circleci/ansible/inventory.txt
-            exit 1
       - persist_to_workspace:
           root: ~/
           paths:
-            - project/.circleci/ansible/inventory.txt
+            - project/.circleci
       # Here's where you will add some code to rollback on failure 
       
   configure-infrastructure:
@@ -185,13 +184,15 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprint: ["6a:57:43:68:5e:3c:d3:a4:61:9f:69:cb:f2:a5:44:43"]
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - project/.circleci/ansible
+      - attach_workspace: 
+          at: project/.circleci
       - run:
           name: Install PIP
           command: sudo apt-get install python-pip python-dev
+      - run:
+          name: test inventory 
+          command: |
+            cat ansible/inventory.txt
       - run:
           name: Install Ansible
           command: |
