@@ -196,7 +196,7 @@ jobs:
       - run:
           name: test inventory 
           command: |
-            cat .circleci/ansible/inventory.txt
+            cat project/.circleci/ansible/inventory.txt
             exit 1
       - run:
           name: Install Ansible
