@@ -174,7 +174,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - project/.circleci
+            - .circleci
       # Here's where you will add some code to rollback on failure 
       
   configure-infrastructure:
