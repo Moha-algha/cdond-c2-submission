@@ -338,19 +338,14 @@ jobs:
     steps:
       - checkout
       - run:
-          name: update packages
-          command: |
-            sudo apt-get update
-            sudo apt-get upgrade
-      - run:
           name: Install curl
           command: sudo apt install curl
       - run:
-          name: install nodejs
-          command: sudo apt install nodejs
-      - run:
-          name: install npm
-          command: sudo apt-get install npm
+          name: install nodejs and npm
+          command: |
+            curl -sL https://deb.nodesource.com/setup_16.x | sudo bash 
+            sudo apt-get install -y nodejs
+            sudo apt-get install -y npm
       - run:
           name: Install awscli
           command: sudo pip install awscli
