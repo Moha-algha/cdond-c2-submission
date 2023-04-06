@@ -200,7 +200,7 @@ jobs:
             cat project/.circleci/ansible/inventory.txt
             echo "****************"
             cat .circleci/ansible/inventory.txt
-            exit 1
+            
       - run:
           name: Install Ansible
           command: |
@@ -218,9 +218,8 @@ jobs:
       - run:
           name: Configure server
           command: |
-            cd .circleci/ansible
+            cd project/.circleci/ansible
             cat inventory.txt
-            cat project/.circleci/ansible/inventory.txt
             ansible-playbook -i inventory.txt configure-server.yml
       # Here's where you will add some code to rollback on failure     
 
