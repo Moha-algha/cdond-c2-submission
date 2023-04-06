@@ -171,8 +171,9 @@ jobs:
             echo "$(aws ec2 describe-instances \
               --query 'Reservations[*].Instances[*].PublicIpAddress')"
             cat .circleci/ansible/inventory.txt
+            echo "dir is $(lis)"
       - persist_to_workspace:
-          root: ~/
+          root: /
           paths:
             - .circleci
       # Here's where you will add some code to rollback on failure 
