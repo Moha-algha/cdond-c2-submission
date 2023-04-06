@@ -192,7 +192,7 @@ jobs:
       - run:
           name: test inventory 
           command: |
-            echo "contents are $(ls)"
+            cat .circleci/ansible/inventory.txt
             exit 1
       - run:
           name: Install Ansible
