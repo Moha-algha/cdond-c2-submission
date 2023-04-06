@@ -192,7 +192,8 @@ jobs:
       - run:
           name: test inventory 
           command: |
-            cat ansible/inventory.txt
+            echo "contents are $(ls)"
+            exit 1
       - run:
           name: Install Ansible
           command: |
