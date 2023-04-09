@@ -140,8 +140,6 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - add_ssh_keys:
-          fingerprints: "6a:57:43:68:5e:3c:d3:a4:61:9f:69:cb:f2:a5:44:43"
       - run:
           name: Install PIP
           command: sudo apt-get install python-pip python-dev
@@ -181,6 +179,8 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints: "65:97:3e:2f:62:27:31:f5:2f:da:4a:2f:14:62:70:a5"
       - attach_workspace: 
           at: project/.circleci/ansible
       - run:
@@ -212,7 +212,7 @@ jobs:
             echo "dir $(ls)"
             cat inventory.txt
             echo " in check$(ansible all -m ping -b -K’)"
-            sudo ansible-playbook -i inventory.txt --private-key=udacity.pem configure-server.yml
+            sudo ansible-playbook -i inventory.txt configure-server.yml
       # Here's where you will add some code to rollback on failure     
 
   run-migrations:
